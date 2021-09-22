@@ -37,10 +37,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     @guest
-      <li class="nav-item {{ request()->routeIs('home*') ? 'active' : '' }}">
+      @else
+          <li class="nav-item {{ request()->routeIs('home*') ? 'active' : '' }}">
         <a class="nav-link" href="{{route('home')}}">Главная</a>
       </li>
-      @else
       @can('isManager')
       <li class="nav-item  {{ request()->routeIs('users*') ? 'active' : '' }}">
         <a class="nav-link" href="{{route('users.index')}}">Сотрудники</a>
