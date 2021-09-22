@@ -18,11 +18,11 @@ use App\Http\Controllers\UsersController as Users;
 
 Auth::routes();
 
-   // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+     Route::get('/', [Home::class, 'index'])->name('home');
 
 
     // Admin routes
-    Route::get('/', [Home::class, 'index'])->name('home');
+      Route::get('/home', [Home::class, 'index'])->name('home');
     // Users
     Route::resource('users', Users::class)->middleware('can:isManager');
    
